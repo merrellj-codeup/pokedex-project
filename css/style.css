@@ -108,6 +108,7 @@ p {
 	flex-direction: column;
 	background: radial-gradient(rgba(253, 127, 39, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
 	position: relative;
+	min-height: 300px;
 	.pokemon-pic {
 		position: absolute;
 		top: 0;
@@ -435,4 +436,19 @@ img.loading {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 150px;
+}
+
+@media screen and (max-width: 800px) {
+	.arrow-container {
+		display: none;
+	}
+	#pokemon-container {
+		flex-direction: column;
+	}
+	.tabs .tabs-content {
+		flex: 0 0 auto;
+	}
+	.evolution {
+		max-width: 100px;
+	}
 }

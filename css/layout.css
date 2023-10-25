@@ -108,6 +108,9 @@
 .flex-shrink-3 {
 	flex: 0 3 auto;
 }
+.flex-wrap {
+	flex-wrap: wrap;
+}
 
 /* GAP CLASSES */
 .gap-0 {
