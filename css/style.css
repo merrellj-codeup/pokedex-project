@@ -1,0 +1,438 @@
+@import "layout.css";
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+	--clr-fire: rgb(253, 127, 39);
+	--clr-water: rgb(69, 146, 196);
+	--clr-grass: rgb(123, 199, 74);
+	--clr-electric: rgb(248, 208, 44);
+	--clr-normal: rgb(164, 168, 168);
+	--clr-fighting: rgb(192, 48, 40);
+	--clr-poison: rgb(160, 64, 160);
+	--clr-ground: rgb(224, 192, 104);
+	--clr-flying: rgb(168, 144, 240);
+	--clr-psychic: rgb(248, 88, 136);
+	--clr-bug: rgb(168, 184, 32);
+	--clr-rock: rgb(184, 160, 56);
+}
+.row {
+	max-width: 960px;
+}
+body {
+	font-family: "Roboto", sans-serif;
+	line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Press Start 2P", script;
+}
+h1 {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	font-size: 1.8rem;
+	text-transform: capitalize;
+}
+h2 {
+	font-size: 0.8rem;
+}
+h3 {
+	font-size: 0.5rem;
+	font-weight: 500;
+}
+p {
+	padding-bottom: 10px;
+}
+.position-relative {
+	position: relative;
+}
+.page-wrapper {
+	overflow: hidden;
+	position: relative;
+}
+.pokeid {
+	display: block;
+	color: grey;
+}
+.element-tag {
+	background-color: grey;
+	padding: 5px 20px;
+	font-size: 0.7rem;
+	font-weight: 700;
+	color: #fff;
+	text-transform: capitalize;
+	border-radius: 999px;
+	&.fire {
+		background-color: var(--clr-fire);
+	}
+	&.water {
+		background-color: var(--clr-water);
+	}
+	&.grass {
+		background-color: var(--clr-grass);
+	}
+	&.electric {
+		background-color: var(--clr-electric);
+	}
+	&.normal {
+		background-color: var(--clr-normal);
+	}
+	&.fighting {
+		background-color: var(--clr-fighting);
+	}
+	&.poison {
+		background-color: var(--clr-poison);
+	}
+	&.ground {
+		background-color: var(--clr-ground);
+	}
+	&.flying {
+		background-color: var(--clr-flying);
+	}
+	&.psychic {
+		background-color: var(--clr-psychic);
+	}
+	&.bug {
+		background-color: var(--clr-bug);
+	}
+	&.rock {
+		background-color: var(--clr-rock);
+	}
+}
+
+.pokemon-pic-wrapper {
+	display: flex;
+	flex-direction: column;
+	background: radial-gradient(rgba(253, 127, 39, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	position: relative;
+	.pokemon-pic {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		flex: 1 0 0;
+	}
+	&.fire {
+		background: radial-gradient(rgba(253, 127, 39, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.water {
+		background: radial-gradient(rgba(69, 146, 196, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.grass {
+		background: radial-gradient(rgba(123, 199, 74, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.electric {
+		background: radial-gradient(rgba(248, 208, 44, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.normal {
+		background: radial-gradient(rgba(164, 168, 168, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.fighting {
+		background: radial-gradient(rgba(192, 48, 40, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.poison {
+		background: radial-gradient(rgba(160, 64, 160, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.ground {
+		background: radial-gradient(rgba(224, 192, 104, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.flying {
+		background: radial-gradient(rgba(168, 144, 240, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.psychic {
+		background: radial-gradient(rgba(248, 88, 136, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.bug {
+		background: radial-gradient(rgba(168, 184, 32, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+	&.rock {
+		background: radial-gradient(rgba(184, 160, 56, 0.5), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	}
+}
+
+.evolution-line {
+	position: absolute;
+	top: 63px;
+	left: 0;
+	width: 100%;
+	border-top: 2px dashed rgba(0, 0, 0, 0.2);
+	&.fire {
+		border-top-color: var(--clr-fire);
+	}
+	&.water {
+		border-top-color: var(--clr-water);
+	}
+	&.grass {
+		border-top-color: var(--clr-grass);
+	}
+	&.electric {
+		border-top-color: var(--clr-electric);
+	}
+	&.normal {
+		border-top-color: var(--clr-normal);
+	}
+	&.fighting {
+		border-top-color: var(--clr-fighting);
+	}
+	&.poison {
+		border-top-color: var(--clr-poison);
+	}
+	&.ground {
+		border-top-color: var(--clr-ground);
+	}
+	&.flying {
+		border-top-color: var(--clr-flying);
+	}
+	&.psychic {
+		border-top-color: var(--clr-psychic);
+	}
+	&.bug {
+		border-top-color: var(--clr-bug);
+	}
+	&.rock {
+		border-top-color: var(--clr-rock);
+	}
+}
+.evolution {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 auto;
+	position: relative;
+	max-width: 125px;
+	text-transform: capitalize;
+	.evo-avatar-wrapper {
+		overflow: hidden;
+		border-radius: 999px;
+		background-color: #fff;
+		&.fire {
+			border: 3px solid var(--clr-fire);
+			background: radial-gradient(rgba(253, 127, 39, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.water {
+			border: 3px solid var(--clr-water);
+			background: radial-gradient(rgba(69, 146, 196, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.grass {
+			border: 3px solid var(--clr-grass);
+			background: radial-gradient(rgba(123, 199, 74, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.electric {
+			border: 3px solid var(--clr-electric);
+			background: radial-gradient(rgba(248, 208, 44, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.normal {
+			border: 3px solid var(--clr-normal);
+			background: radial-gradient(rgba(164, 168, 168, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.fighting {
+			border: 3px solid var(--clr-fighting);
+			background: radial-gradient(rgba(192, 48, 40, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.poison {
+			border: 3px solid var(--clr-poison);
+			background: radial-gradient(rgba(160, 64, 160, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.ground {
+			border: 3px solid var(--clr-ground);
+			background: radial-gradient(rgba(224, 192, 104, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.flying {
+			border: 3px solid var(--clr-flying);
+			background: radial-gradient(rgba(168, 144, 240, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.psychic {
+			border: 3px solid var(--clr-psychic);
+			background: radial-gradient(rgba(248, 88, 136, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.bug {
+			border: 3px solid var(--clr-bug);
+			background: radial-gradient(rgba(168, 184, 32, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+		&.rock {
+			border: 3px solid var(--clr-rock);
+			background: radial-gradient(rgba(184, 160, 56, 0.3), rgba(255, 255, 255, 0)),
+				linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+		}
+	}
+}
+
+.tabs {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 0;
+	.tabs-menu {
+		display: flex;
+		flex: 0 0 auto;
+		.tabs-menu-item {
+			flex: 0 0 auto;
+			padding: 0px 10px 5px 10px;
+			border-bottom: 2px solid transparent;
+			cursor: pointer;
+			opacity: 0.5;
+			transition: all ease 0.3s;
+			&:hover {
+				opacity: 1;
+			}
+			&.active {
+				border-bottom-color: var(--clr-fire);
+				font-weight: 700;
+				opacity: 1;
+			}
+		}
+	}
+	.tabs-content {
+		flex: 1 0 0;
+		overflow-y: auto;
+		padding: 30px 0 0 0;
+		display: flex;
+		flex-direction: column;
+		.tabs-pane {
+			display: none;
+			flex: 1 0 auto;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 10px;
+			&.active {
+				display: flex;
+			}
+		}
+	}
+}
+
+.stat-box {
+	display: flex;
+	width: 100px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1/1;
+	gap: 5px;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 5px 5px 10px rgba(253, 127, 39, 0.3);
+	.stat-box-title {
+		font-size: 1rem;
+		font-weight: 700;
+	}
+}
+
+table.stats-table {
+	font-size: 0.9rem;
+	& td {
+		padding: 5px 10px;
+		font-family: "Press Start 2P", script;
+	}
+	& td:first-child {
+		/* shrink */
+		width: 100px;
+		font-weight: 700px;
+		font-size: 0.6rem;
+	}
+	& td:nth-child(2) {
+		width: 50px;
+		font-size: 0.6rem;
+	}
+	& td:last-child {
+	}
+	& meter {
+		width: 100%;
+	}
+}
+
+.slide-in-left {
+	opacity: 0;
+	animation: slide-in-left 0.8s ease forwards;
+}
+
+.slide-in-right {
+	opacity: 0;
+	animation: slide-in-right 0.8s ease forwards;
+}
+
+@keyframes slide-in-left {
+	0% {
+		transform: translateX(-50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.pokeball {
+	position: absolute;
+	right: 0px;
+	transform: rotate(45deg);
+	top: 30%;
+	color: rgba(253, 127, 39, 0.05);
+}
+
+input {
+	min-height: 40px;
+	padding: 0 20px;
+	border: 1px solid #ccc;
+	border-radius: 999px;
+	outline: none;
+	transition: all ease 0.3s;
+	box-shadow: 5px 5px 10px rgba(253, 127, 39, 0.3);
+	&:focus {
+		border-color: var(--clr-fire);
+	}
+}
+
+.arrow-container {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	opacity: 0.5;
+	transition: all ease 0.3s;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
+	}
+	&.left {
+		left: 20px;
+	}
+	&.right {
+		right: 20px;
+	}
+}
+
+img.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 150px;
+}
