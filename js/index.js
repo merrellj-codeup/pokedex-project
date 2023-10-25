@@ -20,11 +20,11 @@ const debounce = (func, delay) => {
 	} else {
 		renderPokemon(1, pokemonContainer);
 	}
-	searchBar.addEventListener(
-		"keyup",
-		debounce(() => {
-			// submit search form
-			searchForm.submit();
-		}, 500)
-	);
+	// searchBar.addEventListener(
+	// 	"keyup",
+	// 	debounce(() => {
+	// 		// submit search form
+	// 		searchForm.submit();
+	// 	}, 2000)
+	// );
 })();
