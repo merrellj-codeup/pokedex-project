@@ -253,7 +253,6 @@ export const renderPokemon = async (id, target) => {
 	target.innerHTML = "";
 	target.appendChild(html);
 	renderArrows(pokemon.id, target);
-	return pokemon.name;
 };
 export const renderArrows = (id, target) => {
 	const rightArrow = document.createElement("a");
