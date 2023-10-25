@@ -14,6 +14,10 @@
 	--clr-bug: rgb(168, 184, 32);
 	--clr-rock: rgb(184, 160, 56);
 }
+a {
+	text-decoration: none;
+	color: inherit;
+}
 .row {
 	max-width: 960px;
 }

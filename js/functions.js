@@ -149,7 +149,7 @@ export const renderPokemon = async (id, target) => {
             ${pokemon.evolutionChain
 				.map((pokemon) => {
 					let html = `
-                    <div class="evolution align-items-center">
+                    <a class="evolution align-items-center" href="?id=${pokemon.id}">
                         <div class="evo-avatar-wrapper ${pokemon.types[0].type.name}">
                             <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="pokemon" class="evo-avatar">
                         </div>
@@ -160,7 +160,7 @@ export const renderPokemon = async (id, target) => {
                         <div class="d-flex gap-10 flex-wrap justify-content-center">
                         <div class="element-tag ${pokemon.types[0].type.name}">${pokemon.types[0].type.name}</div>
                         </div>
-                    </div>
+                    </a>
                 `;
 					return html;
 				})
